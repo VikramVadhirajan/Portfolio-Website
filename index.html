@@ -417,6 +417,30 @@
 		</script>
 </html>
 
+<script>
 
+window.addEventListener("scroll", function () {
+
+    const homeSection = document.getElementById("home-section");
+    const postsSection = document.querySelector(".posts");
+    const projectsSection = document.getElementById("projects-section");
+
+    const scrollPosition = window.innerHeight + window.scrollY;
+    const pageHeight = document.body.offsetHeight;
+
+    // when user reaches near bottom of page
+    if (scrollPosition >= pageHeight - 50) {
+
+        homeSection.style.display = "none";
+        postsSection.style.display = "none";
+        projectsSection.style.display = "block";
+
+        window.scrollTo({ top: 0, behavior: "smooth" });
+
+    }
+
+});
+
+</script>
 
 <!-- https://html5up.net/massively -->
