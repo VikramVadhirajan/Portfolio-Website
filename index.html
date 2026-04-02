@@ -154,8 +154,22 @@
 									<ul class="actions special">
 										<li><a href="https://github.com/VikramVadhirajan/SQL-Files" target="_blank" class="button">View Project Repository</a></li>
 									</ul>
-								</article>	
+								</article>
+							
+
 							</section>
+
+								<div class="center-project-btn">
+									<a href="#" onclick="showProjects(event)" class="button large">
+										See More Projects
+									</a>
+								</div>		
+
+									
+
+
+
+	<!-- --------START OF PROJECTS-------- -->
 						<!-- Projects -->
 						<div id="projects-section" style="display:none;">
 						<header class="major">
@@ -163,8 +177,6 @@
 						<!-- <p>Individual projects and experiments.</p> -->
 						</header>
 						<ul style="list-style:none; font-size:20px; line-height:2.5;">
-
-	<!-- --------START OF PROJECTS-------- -->
 					<!-- ------------------------------------------------------------------------------------------------------------------------------ -->
 						<div class="project-block">
 							<p class="project-date">APR 2026</p>
@@ -401,46 +413,38 @@
 		function showProjects(event) {
 		event.preventDefault();
 
-		document.getElementById("home-section").style.display = "none";
-		document.querySelector(".posts").style.display = "none";
-		document.getElementById("projects-section").style.display = "block";
+		const home = document.getElementById("home-section");
+		const posts = document.querySelector(".posts");
+		const projects = document.getElementById("projects-section");
+
+		home.style.display = "none";
+		posts.style.display = "none";
+		projects.style.display = "block";
+
+		// scroll to the projects section (same behavior for tab & button)
+		projects.scrollIntoView({
+			behavior: "smooth",
+			block: "start"
+		});
 		}
 
 		function showHome(event) {
 		event.preventDefault();
 
-		document.getElementById("home-section").style.display = "block";
-		document.querySelector(".posts").style.display = "flex";
-		document.getElementById("projects-section").style.display = "none";
+		const home = document.getElementById("home-section");
+		const posts = document.querySelector(".posts");
+		const projects = document.getElementById("projects-section");
+
+		home.style.display = "";
+		posts.style.display = "";
+		projects.style.display = "none";
+
+		home.scrollIntoView({ behavior: "smooth" });
 		}
 
 		</script>
 </html>
 
-<script>
 
-window.addEventListener("scroll", function () {
-
-    const homeSection = document.getElementById("home-section");
-    const postsSection = document.querySelector(".posts");
-    const projectsSection = document.getElementById("projects-section");
-
-    const scrollPosition = window.innerHeight + window.scrollY;
-    const pageHeight = document.body.offsetHeight;
-
-    // when user reaches near bottom of page
-    if (scrollPosition >= pageHeight - 50) {
-
-        homeSection.style.display = "none";
-        postsSection.style.display = "none";
-        projectsSection.style.display = "block";
-
-        window.scrollTo({ top: 0, behavior: "smooth" });
-
-    }
-
-});
-
-</script>
 
 <!-- https://html5up.net/massively -->
