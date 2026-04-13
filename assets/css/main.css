@@ -4807,3 +4807,126 @@ line-height:1.4;
     text-align: center;
     margin-top: 50px;
 }
+
+
+.project-block {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+}
+
+
+
+.project-block summary:hover {
+    color: #e35d6a;
+}
+
+.tag {
+    background:#f2f2f2;
+    padding:4px 10px;
+    border-radius:12px;
+    font-size:12px;
+    margin-left:6px;
+}
+
+.project-block summary {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    list-style: none;
+    padding-left: 0;
+}
+
+/* title spacing */
+.project-block summary strong {
+    display: flex;
+    align-items: center;
+}
+
+/* tag container */
+.project-block summary span {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+
+/* Hide the default arrow */
+.project-block summary::-webkit-details-marker {
+    display: none;
+}
+
+/* fix date spacing */
+.project-block .project-date {
+    margin-top: 10px;
+}
+
+.project-block summary {
+    cursor: pointer;
+}
+
+/* arrow before title */
+.project-block summary strong::before {
+    content: "▶";
+    font-size: 12px;
+    margin-right: 8px;
+}
+
+/* arrow when open */
+.project-block[open] summary strong::before {
+    content: "▼";
+}
+
+
+
+.skills-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 25px;
+margin-top: 20px;
+}
+
+.skill-card span {
+font-weight: 600;
+display: block;
+margin-bottom: 6px;
+}
+
+.skill-bar {
+width: 100%;
+height: 8px;
+background: #e6e6e6;
+border-radius: 4px;
+overflow: hidden;
+}
+
+.skill-fill {
+height: 100%;
+background: #04752a;
+transition: width 1.5s ease;
+}
+
+
+
+.python { width: 60%; }
+.sql { width: 40%; }
+.powerbi { width: 70%; }
+.pandas { width: 85%; }
+.ml { width: 80%; }
+.streamlit { width: 60%; }
+.cleaning { width: 85%; }
+.eda { width: 85%; }
+.tableau { width: 50%; }
+.deploy { width: 30%; }
+
+
+
+.center-project-btn {
+    grid-column: 1 / span 2;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.posts .center-project-btn {
+    grid-column: 1 / -1;
+    text-align: center;
+}
